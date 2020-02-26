@@ -4,7 +4,11 @@
             <div class="card-body">
                 <h4 class="card-title">Barra de progreso</h4>
                 <div class="progress">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" [attr.ariaValuenow]="progreso" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" [style.width]="progreso + '%'" style="width: 50%"></div>
+                </div>
+                <br>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" [attr.ariaValuenow]="progreso2" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" [style.width]="progreso2 + '%'" style="width: 50%"></div>
                 </div>
             </div>
         </div>
@@ -15,19 +19,7 @@
     <div class="col-6">
         <div class="card">
             <div class="card-body">
-                <div class="input-group">
-                    <span class="input-group-btn">
-                        <button class="btn btn-primary" type="button">
-                            <i class="mdi mdi-minus"></i>
-                        </button>
-                    </span>
-                    <input type="text" class="form-control">
-                    <span class="input-group-btn">
-                        <button class="btn btn-primary" type="button">
-                            <i class="mdi mdi-plus"></i>
-                        </button>
-                    </span>
-                </div>
+                <incrementador (actualizaValor)="progreso = $event" nombre="Progress Principal" [progreso]="progreso"></incrementador>
             </div>
         </div>
     </div>
@@ -35,7 +27,7 @@
     <div class="col-6">
         <div class="card">
             <div class="card-body">
-                Texto 2
+                <incrementador (actualizaValor)="progreso2 = $event" nombre="Progress Secundario" [progreso]="progreso2"></incrementador>
             </div>
         </div>
     </div>

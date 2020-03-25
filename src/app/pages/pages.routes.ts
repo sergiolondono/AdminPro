@@ -14,12 +14,12 @@ const pagesRoutes: Routes = [
       path: '',
       component: PagesComponent,
       children: [
-          { path: 'dashboard', component: DashboardComponent },
-          { path: 'progress', component: ProgressComponent },
-          { path: 'graficas1', component: Graficas1Component },
-          { path: 'promesas', component: PromesasComponent },
-          { path: 'rxjs', component: RxjsComponent },
-          { path: 'account-settings', component: AccountSettingsComponent },
+          { path: 'dashboard', component: DashboardComponent, data: { titulo: 'Dashboard', description: 'Módulo de reportes' } },
+          { path: 'progress', component: ProgressComponent, data: { titulo: 'Progress', description: 'Módulo progress' } },
+          { path: 'graficas1', component: Graficas1Component, data: { titulo: 'Gráficas', description: 'Módulo de gráficas' } },
+          { path: 'promesas', component: PromesasComponent, data: { titulo: 'Promesas', description: 'Módulo de promesas' } },
+          { path: 'rxjs', component: RxjsComponent, data: { titulo: 'ReactiveX JS', description: 'Módulo de ReactiveX JS' } },
+          { path: 'account-settings', component: AccountSettingsComponent, data: { titulo: 'Ajustes del tema', description: 'Módulo de ajustes del tema' } },
           { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
       ]
   },

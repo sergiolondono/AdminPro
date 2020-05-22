@@ -16,6 +16,7 @@ import { RegisterComponent } from './login/register.component';
 
 // Servicios
 import { ServiceModule } from './services/service.module';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,8 @@ import { ServiceModule } from './services/service.module';
     AppRoutingModule,
     APP_ROUTES,
     PagesModule,
+    ReactiveFormsModule,
+    FormsModule,
     ChartsModule,
     ServiceModule
   ],

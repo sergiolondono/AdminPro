@@ -13,9 +13,28 @@ export class UsuarioService {
 
   baseUrl: string = URL_SERVICIOS;
 
+  usuario: Usuario;
+  token: string;
+
   constructor(public http: HttpClient) {
     console.log('Servicio de usuario configurado!');
    }
+
+    guardarStorage(id: string, token: string, usuario: Usuario) {
+      localStorage.setItem('id', id);
+      localStorage.setItem('token', token);
+      localStorage.setItem('usuario', JSON.stringify(usuario));
+
+      this.usuario = usuario;
+      this.token = token;
+    }
+
+    loginGoogle(token: string) {
+      return this.http.post(this.baseUrl + '/login/google', { token })
+      .pipe(map((resp: any) => {
+        this.guardarStorage(resp.id, resp.token, resp.usuario);
+      }));
+    }
 
    login(usuario: Usuario, recordar: boolean = false) {
 
@@ -27,9 +46,7 @@ export class UsuarioService {
 
     return this.http.post(this.baseUrl + '/login', usuario)
     .pipe(map((resp: any) => {
-      localStorage.setItem('id', resp.id);
-      localStorage.setItem('token', resp.token);
-      localStorage.setItem('usuario', JSON.stringify(resp.usuario));
+      this.guardarStorage(resp.id, resp.token, resp.usuario);
       return true;
     }));
    }

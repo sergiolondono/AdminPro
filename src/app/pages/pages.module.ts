@@ -11,6 +11,10 @@ import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
 import { Graficas1Component } from './graficas1/graficas1.component';
+
+// Pipe Module
+import { PipesModule } from '../pipes/pipes.module';
+
 import { PAGES_ROUTES } from './pages.routes';
 
 // Temporal
@@ -35,7 +39,8 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     exports: [
         DashboardComponent,
         ProgressComponent,
-        Graficas1Component
+        Graficas1Component,
+        PipesModule
     ],
     imports: [
         SharedModule,

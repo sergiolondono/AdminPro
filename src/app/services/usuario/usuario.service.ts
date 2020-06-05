@@ -63,6 +63,7 @@ export class UsuarioService {
     loginGoogle(token: string) {
       return this.http.post(this.baseUrl + '/login/google', { token })
       .pipe(map((resp: any) => {
+        console.log(resp);
         this.guardarStorage(resp.id, resp.token, resp.usuario);
       }));
     }

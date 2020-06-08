@@ -9,6 +9,7 @@ import {
   LoginGuardGuard
 } from './service.index';
 import { HttpClientModule } from '@angular/common/http';
+import { SubirArchivoService } from './subir-archivo/subir-archivo.service';
 
 @NgModule({
   declarations: [],
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     SidebarService,
     SharedService,
     UsuarioService,
-    LoginGuardGuard
+    LoginGuardGuard,
+    SubirArchivoService
   ]
 })
 export class ServiceModule { }

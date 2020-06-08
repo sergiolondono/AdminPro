@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { RouterModule } from '@angular/router';
 
-// PipesModuleimport 
+// PipesModuleimport
 import { PipesModule } from '../pipes/pipes.module';
 
 import { HeaderComponent } from './header/header.component';

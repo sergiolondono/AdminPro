@@ -6,28 +6,28 @@ import { URL_SERVICIOS } from '../config/config';
 })
 export class ImagenPipe implements PipeTransform {
 
-  transform(img: string, tipo: string = 'usaurio'): any {
+  transform(img: string, tipo: string = 'usuarios'): any {
     let url = URL_SERVICIOS + '/img';
 
-    if(!img) {
+    if (!img) {
       return url + '/usuarios/xxx';
     }
 
-    if (img.indexOf('https') >= 0){
+    if (img.indexOf('https') >= 0) {
       return img;
     }
 
     switch (tipo) {
-      case 'usuario':
+      case 'usuarios':
          url += '/usuarios/' + img;
+         break;
+
+      case 'medicos':
+        url += '/medicos/' + img;
         break;
 
-        case 'medico':
-           url += '/medicos/' + img;
-        break;
-
-        case 'hospital':
-           url += '/hospitales/' + img;
+      case 'hospitales':
+        url += '/hospitales/' + img;
         break;
 
         default:

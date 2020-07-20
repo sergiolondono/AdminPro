@@ -44,7 +44,6 @@ export class UsuariosComponent implements OnInit {
 
   cambiarDesde(valor: number) {
     const desde = this.desde + valor;
-    console.log();
 
     if (desde >= this.totalRegistros) {
       return;

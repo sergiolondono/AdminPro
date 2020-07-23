@@ -77,6 +77,7 @@ export class UsuarioService {
     return this.http.post(this.baseUrl + '/login', usuario).pipe(
       map((resp: any) => {
         this.guardarStorage(resp.id, resp.token, resp.usuario);
+        console.log(resp);
         return true;
       })
     );

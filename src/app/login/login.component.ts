@@ -71,11 +71,13 @@ export class LoginComponent implements OnInit {
     );
 
     this._usuarioService.login(usuario, forma.value.recuerdame)
-      .subscribe(resp => this.router.navigate(['/dashboard']));
+      .subscribe(resp => {
+        console.log(resp);
+        this.router.navigate(['/dashboard']);
+      });
 
-    console.log(forma.valid);
-    console.log(forma.value);
-    // this.router.navigate(['/dashboard']);
+    // console.log(forma.valid);
+    // console.log(forma.value);
      // 19191691258-uv21242vkka92mhle6rdn6kl1u5p57g7.apps.googleusercontent.com
 
   }
